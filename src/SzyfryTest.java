@@ -7,7 +7,7 @@ class SzyfryTest {
 
     @Test
     void szyfrCezaraJezeliKlucz0() {
-        Assertions.assertEquals("ABC", Szyfry.szyfrCezara("ABC", 0));
+        Assertions.assertEquals("25A", Szyfry.szyfrCezara("ABC", 0));
     }
     @Test
     void szyfrCezaraJezeliKluczMniejszyodDlugosciAlfabetu(){
@@ -19,7 +19,7 @@ class SzyfryTest {
     }
     @Test
     void szyfrCezaraJezeliKluczUjemny(){
-        Assertions.assertEquals("ABC", Szyfry.szyfrCezara("DEF",-3));
+        Assertions.assertEquals("25A", Szyfry.szyfrCezara("DEF",-3));
     }
     @Test
     void szyfrCezaraJezeliBezZawijaniaWierszyKluczy(){
@@ -28,5 +28,31 @@ class SzyfryTest {
     @Test
     void szyfrCezaraJezeliZZawijaniemWierwszyKluczy(){
         Assertions.assertEquals("ABC", Szyfry.szyfrCezara("XYZ", 3));
+    }
+
+
+    @Test
+    void szyfrCezaraAsciiJezeliKlucz0() {
+        Assertions.assertEquals("25A", Szyfry.szyfrCezara("ABC", 0));
+    }
+    @Test
+    void szyfrCezaraAsciiJezeliKluczMniejszyodDlugosciAlfabetu(){
+        Assertions.assertEquals("DEF", Szyfry.szyfrCezaraAscii("ABC",3));
+    }
+    @Test
+    void szyfrCezaraAsciiJezeliKluczWiekszyOdDlugosciAlfabetu(){
+        Assertions.assertEquals("DEF", Szyfry.szyfrCezaraAscii("ABC",81));
+    }
+    @Test
+    void szyfrCezaraAsciiJezeliKluczUjemny(){
+        Assertions.assertEquals("ABC", Szyfry.szyfrCezaraAscii("DEF",-3));
+    }
+    @Test
+    void szyfrCezaraAsciiJezeliBezZawijaniaWierszyKluczy(){
+        Assertions.assertEquals("DEF", Szyfry.szyfrCezaraAscii("ABC", 3));
+    }
+    @Test
+    void szyfrCezaraAsciiJezeliZZawijaniemWierwszyKluczy(){
+        Assertions.assertEquals("ABC", Szyfry.szyfrCezaraAscii("XYZ", 3));
     }
 }
